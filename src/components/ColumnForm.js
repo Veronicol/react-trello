@@ -25,8 +25,8 @@ class ColumnForm extends Component {
     return(
       <form onSubmit={this.handleSubmit}>
         <div className="col-4">
-        <div class="card" style={{width: "18rem"}}>
-          <div class="card-body">
+        <div className="card" style={{width: "18rem"}}>
+          <div className="card-body">
             <div className="form-group">
               <label htmlFor="exampleInputEmail1">Column title</label>
               <input type="text" className="form-control" placeholder="title" 

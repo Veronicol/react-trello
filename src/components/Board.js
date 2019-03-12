@@ -23,13 +23,6 @@ class Board extends Component {
     this.getColumns()
   }
 
-  // onSubmitForm = (title) => {
-  //   const pos = this.state.columns.length + 1;
-  //   const col = {title: title, position: pos};
-  //   service.
-  //   this.setState({columns: [...this.state.columns, col]})
-  // }
-
   columnList = () =>  this.state.columns.map(column => <Column key={column.position} {...column} />)
 
   render = () => 

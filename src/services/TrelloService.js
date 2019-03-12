@@ -13,8 +13,7 @@ const getColumns = () => {
 }
 
 const createCard = (card) => {
-  return http.post('/columns', column)
+  return http.post('/cards', card)
 }
 
-
-export default {getColumns, createColumn};
+export default {getColumns, createColumn, createCard};

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import service from '../services/TrelloService'
+import service from '../services/TrelloService';
+import queryString from 'query-string';
 
 class CardForm extends Component {
   
@@ -16,20 +17,25 @@ class CardForm extends Component {
 
   handleSubmit= (event) => {
     event.preventDefault();
-    // service.createCard({ 
-    //   ...this.state,
-    //   position: this.props.
-    // })
-      // .then((response) => this.props.onAddColumn())
+    console.log({ 
+      ...this.state,
+      column: this.props.match.params.id,
+      position: queryString.parse(this.props.location.search).position
+    })
+    service.createCard({ 
+      ...this.state,
+      column: this.props.match.params.id,
+      position: queryString.parse(this.props.location.search).position
+    })
+      .then((response) => console.log(response))
   }
-
 
   render = () => {
     return(
       <form onSubmit={this.handleSubmit}>
         <div className="col-4">
-          <div class="card" style={{width: "18rem"}}>
-            <div class="card-body">
+          <div className="card" style={{width: "18rem"}}>
+            <div className="card-body">
               <div className="form-group">
                 <label htmlFor="exampleInputEmail1">Card title</label>
                 <input type="text" className="form-control" placeholder="title" name="title"
@@ -74,3 +80,4 @@ export default CardForm;
 
 
 
+ 

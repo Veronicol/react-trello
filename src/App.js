@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from './components/misc/Header';
 import Board from './components/Board';
-import { Switch, Route, Redirect} from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import CardForm from './components/CardForm'
 
 class App extends Component {
@@ -11,7 +11,7 @@ class App extends Component {
         <Header />
         <Switch>
           <Route exact path="/" component={ Board}/>
-          <Route exact path="/new-card" component={ CardForm}/>
+          <Route exact path="/:id/new-card" component={ CardForm}/>
         </Switch>
       </div>
     );
