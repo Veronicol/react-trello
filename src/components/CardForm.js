@@ -8,20 +8,18 @@ class CardForm extends Component {
     title:"",
     description: '',
     label: '',
-    imageUrl: ''
+    imageUrl: '',
+    attachment: ''
   }
 
   handleChange = (event) => {
-    this.setState({[event.target.name]: event.target.value})
+    this.setState({
+      [event.target.name]: ( event.target.files ) ? event.target.files[0] : event.target.value
+    })
   }
 
   handleSubmit= (event) => {
     event.preventDefault();
-    console.log({ 
-      ...this.state,
-      column: this.props.match.params.id,
-      position: queryString.parse(this.props.location.search).position
-    })
     service.createCard({ 
       ...this.state,
       column: this.props.match.params.id,
@@ -49,10 +47,13 @@ class CardForm extends Component {
                 {/* <small id="emailHelp" className="form-text text-muted">validations</small> */}
               </div>
               <div className="form-group">
-                <label htmlFor="exampleInputEmail1">Image</label>
+                <label htmlFor="exampleFormControlFile1">Image</label>
+                <input type="file" className="form-control-file" name="attachment" id="attachment" onChange={this.handleChange}/>
+
+                {/* <label htmlFor="exampleInputEmail1">Image</label>
                 <input type="text" className="form-control" placeholder="image" name="imageUrl"
                 value={this.state.imageUrl} onChange={this.handleChange}/>
-                {/* <small id="emailHelp" className="form-text text-muted">validations</small> */}
+                <small id="emailHelp" className="form-text text-muted">validations</small> */}
               </div>
               <div className="form-group">
                 <label htmlFor="exampleInputEmail1">Description</label>
@@ -69,15 +70,4 @@ class CardForm extends Component {
   }
 }
 
-
 export default CardForm;
-
-
-
-
-
-
-
-
-
- 
