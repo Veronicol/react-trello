@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import service from '../services/TrelloService';
+import service from '../../services/TrelloService';
 import queryString from 'query-string';
 
 class CardForm extends Component {

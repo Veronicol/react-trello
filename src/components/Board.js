@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import Column from './Column';
+import  { Column, ColumnForm } from './column';
 import service from '../services/TrelloService'
-import ColumnForm from './ColumnForm';
-
 
 class Board extends Component {
 

@@ -1,7 +1,7 @@
 import React from 'react';
-import Card from './Card';
+import { Card } from '../card';
 import { Link } from 'react-router-dom';
-import service from '../services/TrelloService'
+import service from '../../services/TrelloService'
 
 const Column = (props) => {
   

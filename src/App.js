@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from './components/misc/Header';
 import Board from './components/Board';
 import { Switch, Route } from 'react-router-dom';
-import CardForm from './components/CardForm'
+import { CardForm } from './components/card'
 
 class App extends Component {
   render() {
@@ -10,8 +10,8 @@ class App extends Component {
       <div className="App">
         <Header />
         <Switch>
-          <Route exact path="/" component={ Board}/>
-          <Route exact path="/:id/new-card" component={ CardForm}/>
+          <Route exact path="/" component={ Board }/>
+          <Route exact path="/:id/new-card" component={ CardForm }/>
         </Switch>
       </div>
     );

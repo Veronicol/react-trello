@@ -1,5 +1,5 @@
 import React from 'react';
-import service from '../services/TrelloService'
+import service from '../../services/TrelloService'
 
 const Card = (props) => {
 
