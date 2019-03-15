@@ -49,11 +49,6 @@ class CardForm extends Component {
               <div className="form-group">
                 <label htmlFor="exampleFormControlFile1">Image</label>
                 <input type="file" className="form-control-file" name="attachment" id="attachment" onChange={this.handleChange}/>
-
-                {/* <label htmlFor="exampleInputEmail1">Image</label>
-                <input type="text" className="form-control" placeholder="image" name="imageUrl"
-                value={this.state.imageUrl} onChange={this.handleChange}/>
-                <small id="emailHelp" className="form-text text-muted">validations</small> */}
               </div>
               <div className="form-group">
                 <label htmlFor="exampleInputEmail1">Description</label>

@@ -23,13 +23,13 @@ class Board extends Component {
     this.getColumns()
   }
 
-  columnList = () =>  this.state.columns.map(column => <Column key={column.position} {...column} />)
+  columnList = () =>  this.state.columns.map(column => <Column key={column.position} {...column} onUpdateColumn={this.getColumns}/>)
 
   render = () => 
   <div className="container-fluid">
     <div className="row">
       {this.columnList()}
-      <ColumnForm  position={this.state.columns.length + 1} onAddColumn={this.getColumns}/>
+      <ColumnForm  position={this.state.columns.length + 1} onAddColumn={this.getColumns} />
     </div>
   </div>
 };

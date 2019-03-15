@@ -23,4 +23,17 @@ const createCard = (card) => {
   return http.post('/cards', data)
 }
 
-export default {getColumns, createColumn, createCard};
+const deleteCard = (card) => {
+  return http.delete(`/cards/${card.id}`, card)
+}
+
+const deleteColumn = (column) => {
+
+  return http.delete(`/columns/${column.id}`, column)
+}
+
+export default {getColumns,
+               createColumn,
+               deleteColumn,
+               createCard,
+                deleteCard};
